@@ -8,4 +8,3 @@ Here are your files in Markdown link format:
 * 🧩 [004 - Username to Password Wordlist](004-Username-to-Password-Wordlist.md)
 * 💾 [005 - Offline Password Cracking](005-Offline-Password-Cracking.md)
 * ⚡ [006 - HashCat](006-HashCat.md)
-* 💾 [005 - Offline Password Cracking (Duplicate)](005-Offline-Password-Cracking.md)

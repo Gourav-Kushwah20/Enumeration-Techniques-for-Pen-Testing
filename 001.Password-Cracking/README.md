@@ -1,0 +1,7 @@
+[text](001-Password-Cracking.md) 
+[text](002-Password-Cracking-Technique.md)
+[text](003-Creating-Wordlist.md) 
+[text](004-Username-to-Password-Wordlist.md) 
+[text](005-Offline-Password-Cracking.md) 
+[text](006-HashCat.md)
+[text](005-Offline-Password-Cracking.md)

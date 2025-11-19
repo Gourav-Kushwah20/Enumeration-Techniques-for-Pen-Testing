@@ -1,7 +1,11 @@
-[text](001-Password-Cracking.md) 
-[text](002-Password-Cracking-Technique.md)
-[text](003-Creating-Wordlist.md) 
-[text](004-Username-to-Password-Wordlist.md) 
-[text](005-Offline-Password-Cracking.md) 
-[text](006-HashCat.md)
-[text](005-Offline-Password-Cracking.md)
+# 📚 Password Cracking Resources (Markdown Links)
+
+Here are your files in Markdown link format:
+
+* 🔐 [001 - Password Cracking](001-Password-Cracking.md)
+* 🛠️ [002 - Password Cracking Technique](002-Password-Cracking-Technique.md)
+* 📄 [003 - Creating Wordlist](003-Creating-Wordlist.md)
+* 🧩 [004 - Username to Password Wordlist](004-Username-to-Password-Wordlist.md)
+* 💾 [005 - Offline Password Cracking](005-Offline-Password-Cracking.md)
+* ⚡ [006 - HashCat](006-HashCat.md)
+* 💾 [005 - Offline Password Cracking (Duplicate)](005-Offline-Password-Cracking.md)

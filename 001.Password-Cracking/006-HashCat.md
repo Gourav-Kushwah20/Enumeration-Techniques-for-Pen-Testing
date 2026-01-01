@@ -114,7 +114,7 @@ hashcat --session=myrun --restore
 
 ---
 
-# 🔐 **Brute-force (Mask) Examples**
+## 🔐 **Brute-force (Mask) Examples**
 
 ### 🧾 **Create MD5 and Verify**
 
@@ -239,14 +239,16 @@ echo -n "##password##" | sha1sum | cut -d ' ' -f 1 > sha1-hast.txt
 ```bash
 cat sha1-hast.txt
 ```
-
+- Straight Dictionary(SHA1)
 ```bash
-hastcat -m 100 -a 0 sha1-hast.txt rockyou.txt
+hashcat -m 100 -a 0 sha1-hast.txt rockyou.txt
+```
+```bash
 hashcat -m 100 -a 0 sha1-1.txt /usr/share/wordlists/rockyou.txt
 ```
 
 - Apply Rules:
-
+```bash
 Double MD5 Hash:
 
 echo -n "##password##" | md5sum |cut -d ' ' -f 1 | md5sum |cut -d ' ' -f 1

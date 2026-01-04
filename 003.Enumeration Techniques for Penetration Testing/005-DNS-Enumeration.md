@@ -105,3 +105,55 @@ IP Address to Domain Name mapping within a specified range:
 | SOA         | Start of Authority, contains domain admin and refresh info      |
 | TXT         | Text records, used for SPF, DKIM, and other metadata             |
 | PTR         | Maps an IP address to a domain (reverse lookup)                 |
+
+---
+
+## 🔍 Key DNS Enumeration Tools
+
+| Tool          | Purpose                           | Example Command                                                            |
+| ------------- | --------------------------------- | -------------------------------------------------------------------------- |
+| **nslookup**  | Query DNS records                 | `nslookup armourinfosec.com`                                               |
+| **dig**       | Detailed DNS lookup               | `dig armourinfosec.com ANY`                                                |
+| **host**      | Simple DNS lookup                 | `host armourinfosec.com`                                                   |
+| **nmap**      | DNS and port scanning             | `nmap -p 53 --script=dns-brute armourinfosec.com`                          |
+| **dnsrecon**  | Automated DNS enumeration         | `dnsrecon -d armourinfosec.com`                                            |
+| **dnsenum**   | Brute force DNS enumeration       | `dnsenum armourinfosec.com`                                                |
+| **sublist3r** | Subdomain enumeration             | `sublist3r -d armourinfosec.com`                                           |
+| **crt.sh**    | Certificate search for subdomains | [https://crt.sh/?q=armourinfosec.com](https://crt.sh/?q=armourinfosec.com) |
+
+---
+
+## 🧪 Example DNS Enumeration Commands
+
+### 1. Find all DNS records using `dig`
+
+```bash
+dig armourinfosec.com ANY
+```
+
+### 2. Reverse lookup for PTR records using `dig`
+
+```bash
+dig -x 8.8.8.8
+```
+
+### 3. Find subdomains using `dnsrecon`
+
+```bash
+dnsrecon -d armourinfosec.com -t std
+```
+
+### 4. Find subdomains using `sublist3r`
+
+```bash
+sublist3r -d armourinfosec.com
+```
+
+### 5. Perform zone transfer using `dig`
+
+```bash
+dig axfr @ns1.armourinfosec.com armourinfosec.com
+```
+
+---
+

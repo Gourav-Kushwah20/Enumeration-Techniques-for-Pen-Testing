@@ -224,5 +224,193 @@ cat insta_domain.txt | dnsx -silent -cname -rcode noerror,servfail,refused
 ```
 
 ```bash
-dnsx -l tesla-all_domains.txt -silent -cname -rcode noerror,servfail,refused
+dnsx -l insta_domain.txt -silent -cname -rcode noerror,servfail,refused
 ```
+
+```bash
+dnsx -l insta_domain.txt -silent -cname -rcode noerror,servfail,refused -r /opt/resolvers.txt
+```
+
+---
+
+## 🔍 Querying NS, MX, and TXT Records
+
+```bash
+dnsx -l insta_domain.txt -ns -resp
+```
+
+```bash
+dnsx -l insta_domain.txt -mx -resp
+```
+
+```bash
+dnsx -l insta_domain.txt -txt -resp
+```
+
+---
+
+## 🌐 Extracting Subdomains from a Given Network Range
+
+```bash
+echo 8.21.0.0/16 | dnsx -silent -resp-only -ptr
+```
+
+---
+
+## ⚙️ Using Custom Resolvers and Saving Output
+
+```bash
+wget https://raw.githubusercontent.com/blechschmidt/massdns/master/lists/resolvers.txt
+```
+
+---
+
+## 💾 Saving CNAME Records
+
+```bash
+dnsx -l insta_domain.txt -silent -cname -r /opt/resolvers.txt -o insta-cname.txt
+```
+
+```bash
+dnsx -l insta_domain.txt -silent -cname -resp-only -r /opt/resolvers.txt -o insta-cname.txt
+```
+
+---
+
+# 🧠 dnsx – Beginner Notes 
+
+## 📄 Creating Domain List
+
+```bash
+vim domain_list.txt
+```
+
+Example content:
+
+```text
+google.com
+facebook.com
+youtube.com
+armourinfosec.com
+```
+
+View file:
+
+```bash
+cat domain_list.txt
+```
+
+---
+
+## ℹ️ dnsx Help
+
+```bash
+dnsx --help
+```
+
+* Shows all available options and flags
+* Useful for learning and reference
+
+---
+
+## 🔍 Basic DNS Resolution
+
+```bash
+dnsx -l domain_list.txt
+```
+
+* Resolves domains in the list
+* Returns basic DNS information (A records by default)
+
+---
+
+## 🌐 Query All DNS Records
+
+```bash
+dnsx -l domain_list.txt -a
+```
+
+* `-a` → Query **all DNS record types**
+* Useful for broad DNS reconnaissance
+
+---
+
+## 📥 Query with Full Response
+
+```bash
+dnsx -l domain_list.txt -a -resp
+```
+
+* `-resp` → Shows **detailed DNS response**
+* Includes records + metadata
+
+---
+
+## 🎯 Response Only (Clean Output)
+
+```bash
+dnsx -l domain_list.txt -a -resp-only
+```
+
+* `-resp-only` → Shows **only resolved results**
+* Best for:
+
+  * Piping output to other tools
+  * Clean recon results
+
+---
+
+## 🚦 Filter by DNS Response Codes
+
+```bash
+dnsx -l domain_list.txt -a -rcode noerror,servfail,refused
+```
+
+* `-rcode` → Filter results by DNS status
+* Common codes:
+
+  * `noerror` → Valid DNS response
+  * `servfail` → Server failure
+  * `refused` → Query refused
+
+---
+
+## ✅ Common Use-Cases
+
+* Subdomain & domain reconnaissance
+* Bug bounty DNS enumeration
+* Infrastructure mapping
+* Security testing & pentesting
+
+---
+
+## 🧠 Quick Flag Summary
+
+| Flag         | Meaning                      |
+| ------------ | ---------------------------- |
+| `-l`         | Input file (list of domains) |
+| `-a`         | Query all DNS records        |
+| `-resp`      | Show full DNS response       |
+| `-resp-only` | Show only resolved output    |
+| `-rcode`     | Filter by DNS response code  |
+
+---
+
+## ⚠️ Tips
+
+* Use `-resp-only` for automation
+* Combine with `jq` when using JSON output
+* Always use custom resolvers for better accuracy
+
+---
+
+## 🎯 Beginner Workflow
+
+```bash
+dnsx -l domain_list.txt -a -resp-only
+```
+
+➡️ Clean, fast, and beginner-friendly output
+
+---
+

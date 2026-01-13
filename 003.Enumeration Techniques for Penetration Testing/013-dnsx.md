@@ -10,9 +10,8 @@ It’s widely used in **reconnaissance** and **subdomain validation** workflows 
 ### 🧑‍💻 Using `go install`
 ```bash
 go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
-````
+```
 
----
 
 ### 🕰️ Using `go get` (for older Go versions)
 
@@ -20,7 +19,7 @@ go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx
 ```
 
----
+
 
 ## 📂 Moving the Binary to System Path
 

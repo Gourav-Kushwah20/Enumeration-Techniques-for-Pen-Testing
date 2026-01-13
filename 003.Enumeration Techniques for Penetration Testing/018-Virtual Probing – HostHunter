@@ -1,0 +1,42 @@
+# 🧪 Virtual Probing – HostHunter
+
+🔗 **HostHunter – Official GitHub Repository**  
+https://github.com/SpiderLabs/HostHunter
+
+**HostHunter** is a Python-based reconnaissance tool designed for **Virtual Host (VHOST) discovery and probing**.  
+It helps identify multiple domains hosted on the **same IP address**, which is especially useful in **shared hosting environments**.
+
+---
+
+## 🎯 Use Cases
+
+- 🧭 Identify virtual hosts associated with a single IP address  
+- 🕵️ Discover hidden or undocumented domains on shared infrastructure  
+- 🚀 Expand attack surface during reconnaissance and penetration testing  
+
+---
+
+## ⚙️ Installation
+
+### 📥 Clone the Repository
+
+Navigate to `/opt` (or any preferred directory) and clone the repository:
+
+```bash
+cd /opt
+git clone https://github.com/SpiderLabs/HostHunter.git
+cd HostHunter
+```
+
+---
+
+### 📦 Install Dependencies
+
+Install the required Python dependencies:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+> ⚠️ Ensure **Python 3** is installed and available in your environment.
+

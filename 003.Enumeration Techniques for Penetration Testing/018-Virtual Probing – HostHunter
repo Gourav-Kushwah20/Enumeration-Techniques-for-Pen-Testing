@@ -24,7 +24,13 @@ Navigate to `/opt` (or any preferred directory) and clone the repository:
 
 ```bash
 cd /opt
+```
+
+```bash
 git clone https://github.com/SpiderLabs/HostHunter.git
+```
+
+```bash
 cd HostHunter
 ```
 
@@ -40,3 +46,4 @@ pip3 install -r requirements.txt
 
 > ⚠️ Ensure **Python 3** is installed and available in your environment.
 
+---

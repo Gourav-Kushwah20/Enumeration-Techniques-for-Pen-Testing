@@ -114,11 +114,11 @@ wget https://raw.githubusercontent.com/blechschmidt/massdns/master/lists/resolve
 
 | Tool          | Description                                        | Link   |
 | ------------- | -------------------------------------------------- | ------ |
-| **Massdns**   | High-performance DNS stub resolver for brute force | GitHub |
-| **Findomain** | Fast subdomain discovery using multiple sources    | GitHub |
-| **Amass**     | Enumeration, scraping, brute force, and mapping    | GitHub |
-| **Sublist3r** | Fast passive subdomain enumeration                 | GitHub |
-| **Knockpy**   | Python-based subdomain brute-forcing tool          | GitHub |
+| **Massdns**   | High-performance DNS stub resolver for brute force | [GitHub](https://github.com/blechschmidt/massdns) |
+| **Findomain** | Fast subdomain discovery using multiple sources    | [GitHub](https://github.com/Findomain/Findomain) |
+| **Amass**     | Enumeration, scraping, brute force, and mapping    | [GitHub](https://github.com/owasp-amass/amass) |
+| **Sublist3r** | Fast passive subdomain enumeration                 | [GitHub](https://github.com/aboul3la/Sublist3r) |
+| **Knockpy**   | Python-based subdomain brute-forcing tool          | [GitHub](https://github.com/guelfoweb/knock) |
 
 ---
 

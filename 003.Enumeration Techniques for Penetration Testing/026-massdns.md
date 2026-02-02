@@ -1,7 +1,5 @@
 # ⚡ MassDNS
 
-[MassDNS Repo]
-
 MassDNS is a **high-performance DNS stub resolver** for bulk lookups and reconnaissance.  
 It supports **A, AAAA, CNAME, and PTR** record types and is frequently used in **subdomain enumeration workflows**.
 
@@ -9,24 +7,24 @@ It supports **A, AAAA, CNAME, and PTR** record types and is frequently used in *
 
 ## 📦 Installation
 
-### Clone the MassDNS repository
+Clone the MassDNS repository
 ```bash
 git clone https://github.com/blechschmidt/massdns.git
 ```
 
-### Navigate to the MassDNS directory
+Navigate to the MassDNS directory
 
 ```bash
 cd /opt/massdns/
 ```
 
-### Build the MassDNS binary
+Build the MassDNS binary
 
 ```bash
 make
 ```
 
-### Create a symbolic link to use MassDNS globally
+Create a symbolic link to use MassDNS globally
 
 ```bash
 ln -s /opt/massdns/bin/massdns /usr/local/bin/massdns
@@ -126,18 +124,18 @@ massdns -t CNAME -w tesla.com.CNAME.txt -o S -r /opt/resolvers.txt tesla.com.txt
 
 ## 🧹 Post-processing Results
 
-### Count how many results were returned
+Count how many results were returned
 ```bash
 cat tesla_domain.txt | wc -l
 ```
 
-### Clean up the output by removing record types and trailing dots
+Clean up the output by removing record types and trailing dots
 
 ```bash
 sed -e 's/A.*//; s/CN.*//; s/\.$//' tesla_domain.txt
 ```
 
-### Or apply the changes directly to the file
+Or apply the changes directly to the file
 
 ```bash
 sed -i -e 's/A.*//; s/CN.*//; s/\.$//' tesla_domain.txt
@@ -181,13 +179,13 @@ Ideal for:
 
 Reverse DNS lookups use **PTR records** to resolve IP addresses back to hostnames.
 
-### Format IP addresses for PTR lookup
+Format IP addresses for PTR lookup
 
 ```bash
 sed -i -e 's/$/.in-addr.arpa/' ip.txt
 ```
 
-### Verify the file contents
+Verify the file contents
 
 ```bash
 cat ip.txt
@@ -216,7 +214,7 @@ cut -f3 -d " " hosts-ptr.txt
 
 ## 🎁 Bonus: Using Assetfinder with MassDNS
 
-### Install Assetfinder
+- Install Assetfinder
 
 Assetfinder discovers subdomains from **public OSINT sources**:
 
@@ -226,7 +224,7 @@ apt install assetfinder
 
 ---
 
-### Count Discovered Subdomains for a Domain
+- Count Discovered Subdomains for a Domain
 
 ```bash
 assetfinder tesla.com | wc -l
@@ -234,7 +232,7 @@ assetfinder tesla.com | wc -l
 
 ---
 
-### Pipe Assetfinder Results Directly into MassDNS
+- Using Assetfinder Results Directly into MassDNS
 
 Resolve Assetfinder-discovered subdomains using MassDNS:
 

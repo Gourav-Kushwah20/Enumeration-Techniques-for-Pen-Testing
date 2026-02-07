@@ -269,7 +269,7 @@ Since the scan reveals **7 open ports**, it is neither efficient nor practical t
 * **Total Initial Time:**
 
   ```
-  7 ports × 15 minutes = ~1.75 hours
+  7 ports × 15 minutes = 1.75 hours
   ```
 
 * **If a Vulnerability Is Found:**

